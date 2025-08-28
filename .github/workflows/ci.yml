@@ -53,10 +53,11 @@ jobs:
         env:
           DB_HOST: localhost
           DB_PORT: 5432
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USER: postgres
+          DB_PASSWORD: postgres
+          DB_NAME: crm
         run: npm test
+
 
       - name: Build Docker image
         run: docker build -t devgoku69/crm_api:latest .
